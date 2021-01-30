@@ -1,4 +1,4 @@
-{% set version = "1.45.6" %}
+{% set version = "1.46.0" %}
 
 package:
   name: e2fsprogs-split
@@ -6,11 +6,11 @@ package:
 
 source:
   - url: https://www.kernel.org/pub/linux/kernel/people/tytso/e2fsprogs/v{{ version }}/e2fsprogs-{{ version }}.tar.xz
-    sha256: ffa7ae6954395abdc50d0f8605d8be84736465afc53b8938ef473fcf7ff44256
+    sha256: 91d61cef9a251a18e49a700be0028a8d35b0549a25d2bc263af6fa5d9f7c7d13
 
 build:
   number: 0
-  skip: True  # [not linux]
+  skip: true  # [not linux]
 
 requirements:
   build:
