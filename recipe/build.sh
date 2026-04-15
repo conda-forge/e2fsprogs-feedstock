@@ -11,9 +11,14 @@ AWK=awk \
   --prefix="${PREFIX}" \
   --sbindir='${exec_prefix}/bin' \
   --enable-elf-shlibs \
+  --disable-nls \
+  --with-crond-dir="${PREFIX}/etc/cron.d" \
   --disable-fsck \
   --disable-uuidd \
   --disable-libuuid \
   --disable-libblkid
+
+# e2fsprogs 1.47.4 still recurses into po/ even with --disable-nls.
+perl -0pi -e 's/\bpo\b//g' Makefile
 
 make -j"${CPU_COUNT}"
