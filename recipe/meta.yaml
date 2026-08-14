@@ -15,6 +15,7 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - autoconf >=2.54
     - autoconf-archive
     - automake
@@ -37,7 +38,12 @@ outputs:
     requirements:
       build:
         - {{ compiler('c') }}
+        - {{ stdlib("c") }}
+        - autoconf >=2.54
+        - autoconf-archive
+        - automake
         - make
+        - pkg-config
       host:
       run:
     test:
@@ -60,7 +66,12 @@ outputs:
     requirements:
       build:
         - {{ compiler('c') }}
+        - {{ stdlib("c") }}
+        - autoconf >=2.54
+        - autoconf-archive
+        - automake
         - make
+        - pkg-config
       host:
         - {{ pin_subpackage('e2fsprogs-libs', exact=True) }}
         # Only need the libs, but util-linux doesn't offer a subpackage for it.
