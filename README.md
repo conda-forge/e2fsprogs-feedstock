@@ -20,7 +20,14 @@ Current build status
 ====================
 
 
-<table>
+<table><tr>
+    <td>GitHub Actions</td>
+    <td>
+      <a href="https://github.com/conda-forge/e2fsprogs-feedstock/actions/workflows/conda-build.yml">
+        <img src="https://github.com/conda-forge/e2fsprogs-feedstock/actions/workflows/conda-build.yml/badge.svg?event=push&branch=main">
+      </a>
+    </td>
+  </tr>
 </table>
 
 Current release info
@@ -41,31 +48,73 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `e2fsprogs, e2fsprogs-libs` can be installed with `conda`:
+How to use
+----------
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda install e2fsprogs e2fsprogs-libs
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba install e2fsprogs e2fsprogs-libs
 ```
 
-It is possible to list all of the versions of `e2fsprogs` available on your platform with `conda`:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+# for adding to your local project
+pixi add e2fsprogs e2fsprogs-libs
+# for installing globally
+pixi global install e2fsprogs e2fsprogs-libs
+```
+
+</details>
+
+Search package versions
+-----------------------
+
+It is possible to list all of the versions of `e2fsprogs` available on your platform:
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda search e2fsprogs --channel conda-forge
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba search e2fsprogs --channel conda-forge
 ```
 
-Alternatively, `mamba repoquery` may provide more information:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+pixi search e2fsprogs --channel conda-forge
+```
+
+</details>
+
+<details>
+<summary>With mamba repoquery, which may provide more information</summary>
 
 ```
 # Search all versions available on your platform:
@@ -77,6 +126,8 @@ mamba repoquery whoneeds e2fsprogs --channel conda-forge
 # List dependencies of `e2fsprogs`:
 mamba repoquery depends e2fsprogs --channel conda-forge
 ```
+
+</details>
 
 
 About conda-forge
